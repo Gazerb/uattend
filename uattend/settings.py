@@ -27,7 +27,9 @@ SECRET_KEY = "django-insecure-kq-g!z%-%0iqghh4$1f1v_t1!9@+)b5cz($#x3l*^sl)!!q277
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-gazerb-uattend-ksvl92rt7c.us2.codeanyapp.com']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-gazerb-uattend-ksvl92rt7c.us2.codeanyapp.com']
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     "home",
+    "students",
 ]
 
 MIDDLEWARE = [
