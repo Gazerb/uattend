@@ -11,4 +11,30 @@
 {% endblock %}
 
 {% block content %}
+<div class="row h-100">
+    <!-- For loop to display students -->
+    {% for student in students %}
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="card border-0 text-black">
+            <h2 class="card-title text-center"> Student: </h2>
+            <div class="card-body pb-0">
+                <p class="mb-0"><strong>Student ID:</strong> {{ student.student_id }}</p>
+                <p class="mb-0"><strong>Student Name:</strong> {{ student.name }}</p>
+                <p class="mb-0"><strong>Student University:</strong> {{ student.university }}</p>
+                <p class="mb-0"><strong>Major Subject:</strong> {{ student.major }}</p>                
+            <h3 class="card-title text-center">Grades</h3>
+            {% for grade in grades %}                
+                    <p class="mb-0"><strong>Grade Subject:</strong> {{ grade.subject }} <strong> Grade Score:</strong> {{ grade.grade_score }}</p>
+                    <p class="mb-0"></p>
+            {% endfor %}
+            <h3 class="card-title text-center">Attendance</h3>
+            {% for attendance in attendance %}
+                    <p class="mb-0"><strong>Subject:</strong> {{ attendance.subject }} <strong> Score:</strong> {{ attendance.attendance_score }}</p>
+                    <p class="mb-0"></p>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
